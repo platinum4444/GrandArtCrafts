@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Architects+Daughter&family=Archivo+Black&family=Belleza&family=EB+Garamond:ital@0;1&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.banner {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-with-shadow {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+}
+
+.prueba {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-with-shadow div {
+  font-family: 'Architects Daughter', cursive;
+  font-weight: 700;
+  color: #4B2436;
+}
+
+h4 {
+  color: #4B2436;
+}
+
+.text-with-shadow span {
+  position: absolute;
+  line-height: 2rem;
+  color: #FDE8F8;
+  opacity: .7;
+  z-index: -100;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+img {
+  -webkit-box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.61);
+box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.61);
+}
+
+.horizontal {
+  width: 30rem;
+}
+
+h2, p, h4 {
+  font-family: 'Architects Daughter', cursive;
+}
+
+.garantees {
+  background-color: #FDE8F8;
+  color: #4B2436;
+}
+
+.text-with-shadow span {
+  font-size: 5rem;
+}
+
+@media (min-width: 640px) {
+  .text-with-shadow span {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-with-shadow span {
+    font-size: 7.5rem;
+  }
+}

@@ -1,0 +1,75 @@
+<div>
+  <div class="head flex items-center justify-center text-center h-32">
+    <h1 class=" text-white text-4xl">{{ 'Contact Us' | translate}}</h1>
+  </div>
+
+  <div class="info flex flex-col lg:flex-row justify-center items-center mb-16">
+    <img src="/assets/images/sunshine.jpg" class="w-8/12 md:w-4/12 mt-12 mb-8 lg:mr-32" alt="" srcset="">
+    <form (submit)="sendMessage(datos.value)" [formGroup]="datos" class="flex flex-col items-center lg:block">
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+            {{ 'Name' | translate}}
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input formControlName="name" class="w-48 md:w-64 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white " id="inline-password" type="EMAIL" placeholder="Dave">
+        </div>
+      </div>
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+            {{ 'Email' | translate}}
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input formControlName="email" class="w-48 md:w-64 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white " id="inline-password" type="EMAIL" placeholder="example@gmail.com">
+        </div>
+      </div>
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+            {{ 'Confirm Email' | translate}}
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <input formControlName="emailConfirmed" class="w-48 md:w-64 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white " id="inline-password" type="EMAIL" placeholder="example@gmail.com" onCopy="return false" onDrag="return false" onDrop="return false" onPaste="return false">
+        </div>
+      </div>
+      <div class="alert-success mb-6" *ngIf="hasCopied">
+        <span class="close-button" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>Sorry, write the email</strong>
+      </div>
+
+      <div class="md:flex md:items-center mb-6">
+        <div class="md:w-1/3">
+          <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+            {{ 'Message' | translate}}
+          </label>
+        </div>
+        <div class="md:w-2/3">
+          <textarea formControlName="message" class="w-48 md:w-64 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white " id="inline-password"></textarea>
+        </div>
+      </div>
+      <div class="md:flex md:items-center">
+        <div class="md:w-1/3"></div>
+        <div class="md:w-2/3">
+          <button class="shadow focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
+            {{'Submit' | translate}}
+          </button>
+          <div class="alert-success mb-6" *ngIf="isSent && isSent != null">
+            <span class="close-button" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>Grandart</strong> has received your message.
+          </div>
+          <div class="alert-success mb-6" *ngIf="!isSent && isSent != null">
+            <span class="close-button" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong>ERROR!!!!</strong> Your message has not been sent.
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,26 @@
+<a class="btn-open-menu">
+  <span class="hamburguer"></span>
+</a>
+
+<header class="flex justify-around">
+  <a routerLink="" class="logo-link flex justify-center"><img src="/assets/images/logo.svg" class="logo m-0" alt="" srcset=""></a>
+
+  <div class="header-content">
+    <a class="btn-close-menu"></a>
+
+    <nav>
+      <a routerLink="" class="link-menu mr-8 uppercase">HOME</a>
+      <a routerLink="paintbynumbers" class="link-menu mr-8 uppercase">{{'Paint By Numbers' | translate }}</a>
+      <button class="mr-8 uppercase link-menu button-link" (click)="goToBlog()">BLOG</button>
+      <a routerLink="our-story" class="link-menu mr-8 uppercase">{{'Our Story' | translate}}</a>
+      <a routerLink="contact" class="link-menu mr-8 uppercase">{{'Contact Us' | translate}}</a>
+    </nav>
+    <div class="social">
+      <button (click)="changeLanguage('eng')" class="mr-8 flag-icon flag-icon-gb">
+      </button>
+      <button (click)="changeLanguage('pol')" class="mr-8 flag-icon flag-icon-pl">
+      </button>
+    </div>
+  </div>
+</header>
+

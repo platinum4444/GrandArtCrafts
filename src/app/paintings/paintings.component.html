@@ -1,0 +1,18 @@
+<h1 class="text-with-shadow md:mb-16 mt-32"> <div class="text-3xl md:text-4xl"> {{ 'Our Unique Designs' | translate }} </div><span class="no-text-7xl no-md:text-8xl uppercase"> {{ 'Unique' | translate }} </span></h1>
+
+<div class="paintings flex flex-row flex-wrap items-center justify-around w-screen mt-16">
+  <div *ngFor="let painting of paintings" class="painting flex flex-col justify-items-center items-center mb-16 w-full xl:w-2/4 shadow-custom">
+    <ng-container *ngIf="isAvailable(painting)">
+      <a [routerLink]="'' + painting.link" class="link-menu xl:mr-8 text-3xl">
+        <div>
+          <img [src]="painting.mainImage" alt="" class="vertical" *ngIf="isVertical(painting.position)">
+          <img [src]="painting.mainImage" alt="" class="horizontal" *ngIf="!isVertical(painting.position)">
+        </div>
+      </a>
+        <h4><a [routerLink]="'' + painting.link" class="link-menu xl:mr-8 text-3xl">{{painting.name | translate}}</a></h4>
+    </ng-container>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
+.head {
+  background-color: #4B2436;
+}
+
+p, b {
+  color: #4B2436;
+}
+
+
+.info {
+
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+img {
+  object-fit: cover;
+}
+

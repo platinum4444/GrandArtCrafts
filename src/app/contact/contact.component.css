@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
+.head, button {
+  background-color: #4B2436;
+}
+
+p, b, label {
+  color: #4B2436;
+}
+
+.info, label {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.info {
+  margin-top: 2.5rem;
+
+}
+
+input, textarea, input:focus {
+  border: 1px solid #4B2436;
+}
+
+.alert-danger,
+.alert-success,
+.alert-info,
+.alert-warning {
+	width: 100%;
+	padding: 20px;
+	border-radius: 0.25rem;
+  margin-top: 30px;
+
+}
+.alert-danger {
+	color: #ec4561;
+	background-color: #4B2436;
+}
+.alert-success {
+	color: white;
+	background-color: #4B2436;
+}
+.alert-info {
+	color: #38a4f8;
+	background-color: rgba(56, 164, 248, 0.2);
+}
+.alert-warning {
+	color: #f8b425;
+	background-color: rgba(248, 180, 37, 0.2);
+}
+
+.close-button {
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.close-button:hover {
+	color: white;
+}

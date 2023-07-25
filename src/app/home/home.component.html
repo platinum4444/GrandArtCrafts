@@ -1,0 +1,115 @@
+
+<div class="banner w-screen bg-black" [ngStyle]="{backgroundImage:'url(/assets/images/banner.png)'}" >
+
+</div>
+
+<div class="phrases">
+
+  <h3 class="text-with-shadow my-32"> <div class="text-3xl md:text-4xl"> {{ 'We Are On A Mission' | translate }} </div><span class="no-text-7xl no-md:text-8xl uppercase">{{ 'MISSION' | translate }}</span></h3>
+  <h3 class="text-with-shadow my-32"> <div class="text-3xl md:text-4xl"> {{ 'We Want To Be Recognised' | translate}} </div></h3>
+  <h3 class="text-with-shadow my-32"> <div class="text-3xl md:text-4xl"> {{ 'As The Best Brand' | translate}} </div><span class="no-text-7xl no-md:text-8xl uppercase">{{ 'Brand' | translate }}</span></h3>
+
+</div>
+
+
+
+<div class="garantees pt-16 pb-32 flex justify-items-center flex-col">
+  <h2 class="text-5xl text-center">{{ 'OUR GARANTEES' | translate }}</h2>
+  <div class="flex justify-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-32 gap-y-16 mt-20 ">
+      <div class="garantees-item flex flex-col md:flex-row  items-center">
+        <img src="/assets/images/icons/14.svg" alt="Money Back Guarantee" class="w-24">
+        <p class="text-3xl text-center md:text-left mt-8 md:ml-4 font-bold">{{ 'Money Back Guarantee' | translate }}</p>
+      </div>
+      <div class="garantees-item flex flex-col md:flex-row items-center">
+        <img src="/assets/images/icons/10.svg" alt="Crease-Free Framed Canvas" class="w-24">
+        <p class="text-3xl text-center md:text-left mt-8 md:ml-4 font-bold">{{ 'Crease-Free Framed Canvas' | translate }}</p>
+      </div>
+      <div class="garantees-item flex flex-col md:flex-row items-center">
+        <img src="/assets/images/icons/15.svg" alt="Fast Delivery" class="w-24">
+        <p class="text-3xl text-center mt-8 md:ml-4 font-bold">{{ 'Fast Delivery' | translate }}</p>
+      </div>
+      <div class="garantees-item flex flex-col md:flex-row items-center">
+        <img src="/assets/images/icons/11.svg" alt="Exquisite Gift Package" class="w-24">
+        <p class="text-3xl text-center mt-8 md:ml-4 font-bold">{{ 'Exquisite Package' | translate }}</p>
+      </div>
+      <div class="garantees-item flex flex-col md:flex-row items-center ">
+        <img src="/assets/images/icons/16.svg" alt="High Quality Components" class="w-24">
+        <p class="text-3xl text-center mt-8 md:ml-4 font-bold">{{ 'High Quality Components' | translate }}</p>
+      </div>
+      <div class="garantees-item flex flex-col md:flex-row items-center ">
+        <img src="/assets/images/icons/12.svg" alt="Magnifier" class="w-24">
+        <p class="text-3xl  text-center mt-8 md:ml-4 font-bold">{{ 'Magnifier' | translate }}</p>
+      </div>
+      <div class="garantees-item flex flex-col md:flex-row items-center ">
+        <img src="/assets/images/icons/17.svg" alt="Excellent Customer Service" class="w-24">
+        <p class="text-3xl  text-center mt-8 md:ml-4 font-bold">{{ 'Excellent Customer Service' | translate }}</p>
+      </div>
+      <div class="garantees-item flex flex-col md:flex-row items-center ">
+        <img src="/assets/images/icons/13.svg" alt="No Blending Required" class="w-24">
+        <p class="text-3xl  text-center mt-8 md:ml-4 font-bold">{{ 'No Blending Required' | translate }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<h3 class="text-with-shadow md:mb-16 mt-32"> <div class="text-3xl md:text-4xl"> {{ 'Our Unique Designs' | translate }} </div><span class="no-text-7xl no-md:text-8xl uppercase" style="font-size: 4rem;"> {{ 'Unique' | translate }}</span></h3>
+
+<div class="paintings flex flex-row flex-wrap items-center justify-around w-screen mt-16">
+  <div *ngFor="let painting of paintings" class="painting flex flex-col justify-items-center items-center mb-16 w-full xl:w-2/4 shadow-custom">
+    <ng-container *ngIf="isAvailable(painting)">
+      <a [routerLink]="'paintbynumbers/' + painting.link" class="link-menu xl:mr-8 text-3xl">
+        <div>
+          <img [src]="painting.mainImage" alt="" class="vertical" *ngIf="isVertical(painting.position)">
+          <img [src]="painting.mainImage" alt="" class="horizontal" *ngIf="!isVertical(painting.position)">
+        </div>
+      </a>
+        <h4><a [routerLink]="'paintbynumbers/' + painting.link" class="link-menu xl:mr-8 text-3xl">{{painting.name | translate}}</a></h4>
+    </ng-container>
+
+  </div>
+</div>
+
+<div class="head mt-16 text-black text-center">
+  <div class="newsletter w-screen flex flex-col justify-center items-center">
+    <h1 class="text-4xl text-center w-10/12 md:w-12/12 mb-12 mt-16">{{ 'Get Our Complete Paint By Numbers Guide' | translate }}</h1>
+    <p class="w-10/12 md:w-6/12 mb-12 barlow">{{'*By clicking you accept to be contacted for marketing purposes. You can unsubscribe at any time.' | translate }} </p>
+    <form class="flex xl:flex-row flex-col items-center mb-8" [formGroup]="subscribeDatos" (submit)="subscribe(subscribeDatos.value)">
+      <input class="w-5/5 xl:w-2/5 my-2 mx-2 md:w-96 px-9 h-12 rounded" type="text" formControlName="name" name="" id="" placeholder="{{'Name' | translate}}">
+      <input class="w-5/5 xl:w-2/5 my-2 mx-2 md:w-96 px-9 h-12 rounded" type="email" formControlName="email" name="" id="" placeholder="E-mail">
+      <button class="w-5/5 xl:w-2/5 my-2 mx-2 h-12 block rounded" type="submit">{{'Get it!' | translate}}</button>
+    </form>
+    <div class="alert-success mb-6 barlow" *ngIf="isSent && isSent != null">
+      <span class="close-button" onclick="this.parentElement.style.display='none';">&times;</span>
+      <strong> Your guide has been sent succesfully, please check your spam folder. Contact us if you don't receive it within an hour. </strong>
+    </div>
+    <div class="alert-success mb-6 barlow" *ngIf="!isSent && isSent != null">
+      <span class="close-button" onclick="this.parentElement.style.display='none';">&times;</span>
+      <strong>Error!!!!</strong>
+    </div>
+  </div>
+</div>
+
+
+
+<!--
+<div class="cookie-consent-banner">
+  <div class="cookie-consent-banner__inner">
+    <div class="cookie-consent-banner__copy">
+      <div class="cookie-consent-banner__header">THIS WEBSITE USES COOKIES</div>
+      <div class="cookie-consent-banner__description">We use cookies to optimize our website and our service.</div>
+    </div>
+
+    <div class="cookie-consent-banner__actions">
+      <a href="#" class="cookie-consent-banner__cta">
+        OK
+      </a>
+
+      <a href="#" class="cookie-consent-banner__cta cookie-consent-banner__cta--secondary">
+        Decline
+      </a>
+    </div>
+  </div>
+</div>
+-->

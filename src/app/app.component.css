@@ -1,0 +1,40 @@
+.alert-danger,
+.alert-success,
+.alert-info,
+.alert-warning {
+	width: 100%;
+	padding: 20px;
+	border-radius: 0.25rem;
+}
+.alert-danger {
+	color: #ec4561;
+	background-color: rgba(236, 69, 97, 0.2);
+}
+.alert-success {
+	color: #02a499;
+	background-color: rgba(2, 164, 153, 0.2);
+}
+.alert-info {
+	color: #38a4f8;
+	background-color: rgba(56, 164, 248, 0.2);
+}
+.alert-warning {
+	color: #f8b425;
+	background-color: rgba(248, 180, 37, 0.2);
+}
+
+.close-button {
+	margin-left: 15px;
+	color: #04040463;
+	font-weight: bold;
+	float: right;
+	font-size: 22px;
+	line-height: 20px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.close-button:hover {
+	color: black;
+}
+

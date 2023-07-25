@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #FDE8F8;
+  color: #4B2436;
+}
+
+.head {
+  background-color: #4B2436;
+}
+
+.blog-entry {
+  -webkit-box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.45);
+  box-shadow: 5px 5px 15px -3px rgba(0,0,0,0.45);
+}

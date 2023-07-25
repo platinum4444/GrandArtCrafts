@@ -1,0 +1,148 @@
+
+/* Linea para permitir que el menú no se queda con z-index 10 al cambiar la página */
+header {
+  z-index: -10;
+}
+
+.text-with-shadow {
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+}
+
+.text-with-shadow div {
+  font-family: 'Architects Daughter', cursive;
+  font-weight: 700;
+  color: #4B2436;
+}
+
+.text-with-shadow span {
+  position: absolute;
+  line-height: 0.5rem;
+  color: #FDE8F8;
+  opacity: .7;
+  z-index: -100;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.text-with-shadow span {
+  font-size: 5rem;
+}
+
+.horizontal {
+  width: 35rem;
+}
+
+.vertical {
+  width: 30rem;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+a {position: relative; outline: none;
+}
+
+h4 {
+  width: 100%;
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+
+h4 > a {
+  font-family: 'Architects Daughter', cursive;
+  text-decoration: none;
+  color: #512A3C;
+  z-index: 1;
+}
+
+h4 > a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: .25s linear;
+  height: 7px;
+  width: 100%;
+  border: solid 2px #512A3C;
+  border-color: #512A3C transparent transparent transparent;
+  border-radius: 50%;
+}
+.painting:hover h4 > a:before,
+.painting:focus h4 > a:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+@keyframes hover-v {
+  0% {
+      transform: scaleX(0);
+      height: 5px;
+     }
+  45% {
+      transform: scaleX(1.05);
+      height: 5px;
+     }
+  55% {height: 5px;}
+  100% {
+      transform: scaleX(1.05);
+      height: 3.8rem;
+     }
+}
+
+h2, p, h3 {
+  font-family: 'Architects Daughter', cursive;
+}
+
+.head {
+  background-color: #FDE8F8;
+}
+
+.garantees {
+  background-color: #FDE8F8;
+  color: #4B2436;
+}
+
+input[type=submit] {
+  background-color: #4B2436;
+  color: #FDE8F8;
+}
+
+.text-with-shadow span {
+  font-size: 5rem;
+}
+
+@media (min-width: 640px) {
+  .text-with-shadow span {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-with-shadow span {
+    font-size: 7.5rem;
+  }
+}
+
+
+
+@media (min-width: 640px) {
+  .text-with-shadow span {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-with-shadow span {
+    font-size: 7.5rem;
+  }
+}

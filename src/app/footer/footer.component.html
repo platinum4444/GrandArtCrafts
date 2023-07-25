@@ -1,0 +1,28 @@
+<footer class="text-white flex flex-col justify-center">
+  <div class="flex flex-col md:flex-row justify-around h-3/4 mt-8">
+    <div class="flex justify-center mb-8">
+      <a href="https://www.instagram.com/grandart_crafts" class="mr-3 text-center" target="_blank"><i class="fab fa-instagram" *ngIf="lang === 'eng'"></i></a>
+      <a href="https://www.instagram.com/grandart_craftspl/" class="mr-3 text-center" target="_blank"><i class="fab fa-instagram" *ngIf="lang === 'pol'"></i></a>
+      <a href="https://www.youtube.com/channel/UCVx5EQKBcAu2UN9pjmBn5fg" class="mr-3 text-center" target="_blank" *ngIf="lang === 'eng'"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.youtube.com/channel/UCVx5EQKBcAu2UN9pjmBn5fg" class="mr-3 text-center" target="_blank" *ngIf="lang === 'pol'"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/Grandart-109458447614471/" class="mr-3 text-center" target="_blank" *ngIf="lang === 'eng'"><i class="fab fa-facebook-square"></i></a>
+      <a href="https://www.facebook.com/grandartcraftspl" class="mr-3 text-center" target="_blank" *ngIf="lang === 'pol'"><i class="fab fa-facebook-square"></i></a>
+    </div>
+    <div class="flex flex-col">
+      <a href="https://blog.grandartcrafts.com/" class="text-center text-l mb-2 ">{{'Blog' | translate }}</a>
+      <a routerLink="our-story" class="text-center text-l mb-2 ">{{'Our Story' | translate }}</a>
+      <a routerLink="contact" class="text-center text-l mb-2 ">{{'Contact Us' | translate }}</a>
+      <p class="text-center mt-8 xl:mt-24 mb-8 text-base">
+        © Copyright Reserved 2021 | Grandart | info@grandartcrafts.com
+      </p>
+    </div>
+    <div class="flex flex-col">
+      <a routerLink="contact" class="text-center text-l mb-2 ">{{'Join Us As An Artist' | translate }}</a>
+      <a routerLink="contact" class="text-center text-l mb-2 ">{{'Wholesale Enquiries' | translate }}</a>
+      <a routerLink="privacy" class="text-center text-l mb-2 ">{{'Privacy Policy' | translate }}</a>
+      <a routerLink="faq" class="text-center text-l mb-2">{{'FAQ' | translate }}</a>
+    </div>
+  </div>
+</footer>
+
+

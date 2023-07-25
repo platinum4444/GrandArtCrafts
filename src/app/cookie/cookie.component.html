@@ -1,0 +1,11 @@
+<div id="simple-cookie-consent" *ngIf="!areAccepted">
+  <div class="cookie-consent-container">
+    <div class="cookie-consent-notice w-7/12">
+      <h2 class="text-xl font-bold mb-4">Your Cookie Preferences</h2>
+      <p>This website uses cookies to give our users the best experience. You can manage your settings below or find out by reading our <a href="#">Cookie Policy</a>.</p>
+    </div>
+    <div class="cookie-consent-selection w-3/12">
+      <button value="true" class="cookie-consent-allow" (click)="allowCookies()">Allow Cookies</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap');
+
+.head {
+  background-color: #4B2436;
+}
+
+p, b {
+  color: #4B2436;
+}
+
+.info {
+  margin-top: -5rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+details {
+  cursor: pointer;
+}
+
+a {
+  margin-top: 13px;
+  text-decoration: underline;
+}
+
+.faq-image {
+  width: 160px;
+
+}

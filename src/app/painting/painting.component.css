@@ -1,0 +1,36 @@
+.w-14c {
+  /*width: 14.28571428571429%;*/
+  width: 14%;
+}
+
+.fa, .descriptions h2  {
+  color: #AC3C89;
+}
+
+.modal button {
+
+  background-color: #AC3C89;
+  border: none;
+}
+
+.stick {
+  position: sticky;
+  top: 0;
+}
+
+.name, .price {
+  color: #4B2436;
+}
+
+p, li {
+  text-align: justify;
+
+}
+
+@media (max-width: 768px) {
+  .stick {
+    position: relative;
+  }
+}
+
+

@@ -1,0 +1,111 @@
+<div *ngIf="isPaintingFiltered">
+  <div class="flex flex-col lg:flex-row justify-center items-center lg:items-start w-11/12 lg:w-8/12 mx-auto my-16">
+    <div class="stick w-12/12 lg:w-6/12 flex flex-col justify-center items-center mr-16">
+      <img [src]="mainImage" alt="" class="w-12/12">
+      <div class="w-12/12 mt-4 flex justify-between">
+        <ng-container *ngIf="lang == 'eng'">
+          <img class="w-14c w-1/12 object-cover" *ngFor="let image of currentPainting.images.eng" #imageElement (click)="changeImage(imageElement.src)" [src]="image" alt="">
+        </ng-container>
+        <ng-container *ngIf="lang == 'pol'">
+          <img class="w-14c w-1/12 object-cover" *ngFor="let image of currentPainting.images.pol" #imageElement (click)="changeImage(imageElement.src)" [src]="image" alt="">
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="w-12/12 lg:w-6/12">
+      <h1 class="text-4xl mb-4 name mt-8 lg:mt-0">{{currentPainting.name | translate}}</h1>
+      <p class="text-lg mb-6 font-bold price">{{'£ 20.90' | translate}}</p>
+      <div>
+        <p class="mb-3 lg:mb-0"><span class="fa fa-plane mr-3 lg:mb-4"></span>{{'Free Shipping' | translate}}</p>
+        <p class="mb-3 lg:mb-0"><span class="fa fa-clock mr-3 lg:mb-4"></span>{{'Estimated delivery time' | translate}} {{currentPainting.estimatedDelivery-1}}-{{currentPainting.estimatedDelivery}} {{'days' | translate}}</p>
+        <p class="mb-3 lg:mb-0"><span class="fa fa-calendar mr-3"></span>{{'30 day return' | translate }}</p>
+      </div>
+      <button class="my-4 py-3 px-4 border-2 border-black" (click)="toggleModal()">{{'Buy on Amazon' | translate }}</button>
+      <div>
+        <div class="mb-8">
+          <h2 class="text-lg font-bold text-gray-600">{{'LACKING CREATIVITY?' | translate}}</h2>
+          <p class="inline-block">{{'Free the inner artist trapped inside you and create a masterpiece that (maybe) one day will be displayed on the walls of The Louvre, the ceiling of the Tate modern or even your aunty’s Dorothy living room, she’ll be thrilled showing it off to her guests' | translate}}</p>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-lg font-bold text-gray-600">{{'ANNOYED WITH UGLY CREASES SPOILING YOUR ARTWORK?' | translate }}</h2>
+          <p class="inline-block">{{'Our crease free paint by numbers kits come with a canvas mounted and stretched on a 16” x 20” (40 x 50 cm) wooden frame. You’ll feel like a pro painting on a framed canvas' | translate}}</p>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-lg font-bold text-gray-600">{{'DON’T YOU HAVE AN EAGLE EYE?' | translate}}</h2>
+          <p class="inline-block">{{'No worries our numbers are big enough to be seen with naked eye. If you still can’t see them properly, we cannot book you in for a new pair of glasses so we provide you with a magnifier' | translate }}</p>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-lg font-bold text-gray-600">{{'FEELING BORED OR BLUE?' | translate}}</h2>
+          <p class="inline-block">{{'Arts and crafts for adults reduce anxiety and stress levels, increase concentration and attention span, and last but not least, it’s also a fun way to spend time alone or accompanied by your loved ones' | translate}}</p>
+        </div>
+        <div class="">
+          <h2 class="text-lg font-bold text-gray-600">{{'CONCERNED ABOUT QUALITY?' | translate }}</h2>
+          <p class="inline-block">{{'Your satisfaction is our satisfaction, if you are not totally happy with your purchase please let us know and we’ll do our best to make it right' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="descriptions">
+
+    <div class="w-11/12 lg:w-8/12 mx-auto mb-16">
+      <h2 class="text-xl font-bold text-gray-600 mb-4">{{'Product Description' | translate}}</h2>
+      <p>
+        <span [innerHTML]=" '<b>Grandart adult paint by numbers kit</b> comes with a 16” x 20” (40 cm x 50 cm) canvas mounted on a wooden frame, set of' | translate ">
+        </span>
+        {{ currentPainting.setOfColors }}
+        <span [innerHTML]="'acrylic paint colours, set of brushes, magnifier, reference sheet, picture card and hanging set (2 hooks & 2 screws).' | translate "></span>
+        <span [innerHTML]="'The canvas is printed with an outline divided into small sections with numbers which match specific colours. you must colour every section with the corresponding paint.' | translate"></span>
+        <span [innerHTML]="'This is a suitable <b>paint by numbers for children over 14 or younger under supervision,</b> for adults beginners and more advanced in the mood for a colourful and beautiful design.' | translate"></span>
+      </p>
+  </div>
+    <div class="w-11/12 lg:w-8/12 mx-auto mb-16">
+      <h2 class="text-xl font-bold text-gray-600 mb-4">{{ 'Why us?' | translate }}</h2>
+      <ul class="list-disc ml-5 lg:ml-10">
+        <li [innerHTML]="'All our canvases come <b>mounted and stretched on a frame</b>, so there are no creases spoiling your artwork and you can hang it straight after finishing it.' | translate"></li>
+        <li [innerHTML]="'<b>Exquisite packaging</b> to surprise your loved ones.' | translate"></li>
+        <li> <span [innerHTML]="'<b>No blending is required,</b> all' | translate"></span> {{ currentPainting.setOfColors }} {{'colours are ready to be used in their own pod.' | translate}} </li>
+        <li [innerHTML]="'This is a game of big numbers, you won’t need superb vision to see them. In addition you can <b>use our magnifier.</b>' | translate"></li>
+        <li [innerHTML]="'More than enough paint to finish the job.' | translate"></li>
+      </ul>
+    </div>
+    <div class="w-11/12 lg:w-8/12 mx-auto mb-16">
+      <h2 class="text-xl font-bold text-gray-600 mb-4">{{'Instructions' | translate}}</h2>
+      <ul class="list-disc ml-5 lg:ml-10">
+        <li [innerHTML]="'Match the number of the paint and the number of the field on the canvas.' | translate"> </li>
+        <li [innerHTML]="'Use the paint directly and do not add any water. No colour blending is required.' | translate"></li>
+        <li [innerHTML]="'If you use the wrong colour, let it dry completely. Once it is dry, paint over the area with the right colour. Check the reference sheet if you are not sure about the number of the field you have covered.' | translate"></li>
+        <li [innerHTML]="'Moisten your brush with water before putting it in the paint. Clean your brushes thoroughly between colours and after finishing.' | translate"></li>
+        <li [innerHTML]="'Cover the lid of paint well when you do not use it, otherwise, it will get dry. If it dries, add a drop or two of warm water to bring it back to life!' | translate"></li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+<div *ngIf="showModal" class="modal overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+  <div class="relative w-auto my-6 mx-auto max-w-6xl">
+    <!--content-->
+    <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+      <!--header-->
+      <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+        <h3 class="text-3xl font-semibold mx-auto">
+          {{'Select delivery country' | translate}}
+        </h3>
+
+      </div>
+      <!--body-->
+      <div class="relative p-6 flex-col">
+        <a [href]="country.link" *ngFor="let country of currentPainting.countries" class="px-6 py-4" target="_blank"> {{ country.name | translate}} </a>
+      </div>
+      <!--footer-->
+      <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+        <a href="" class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" (click)="toggleModal()">
+          {{'Close' | translate}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="showModal" class="opacity-25 fixed inset-0 z-40 bg-black"></div>
